@@ -1,23 +1,36 @@
 import express from "express"
 import path from "path"
+import { readFile } from "fs/promises"
+import { crearListadoPeliculas, crearPagina, crearDetallePelicula } from "./utils/utils.js"
 const app = express()
 // let contador = 0
 
-app.use( express.static("public") )
+// app.use( express.static("public") )
 app.use( express.urlencoded({ extended: true }) )
 
-app.get("/",(request, response)=>{
-    //response.send("Hoola desde express")
-    console.log("Ruta: " + path.resolve("public/index.html") )
-    response.sendFile(path.resolve("public/index.html"))
+function getPeliculas(){
+    return readFile(path.resolve("data/productos.json"), { encoding: 'utf8' })
+        .then( (peliculas) => JSON.parse(peliculas) )
+        .catch( () => [] )
+}
+
+function getPeliculaId(id){
+    return getPeliculas().then( peliculas => {
+        return peliculas.find( pelicula => pelicula.id == id ) || {}
+    } )
+}
+
+app.get("/",(req, res)=>{
+    getPeliculas()
+        .then(productos => {
+            res.send(crearPagina("Listado de peliculas", crearListadoPeliculas(productos)))
+        })
 })
-app.get("/saludo", (req, res) => {
-    console.log(req.query.mensaje);
-} )
-app.post("/saludo", (req, res)=> {
-    console.log(req.body)
-})
-// app.get("/contador",(request, response)=>{
-//     response.send(`<h1>${contador++}</h1>`)
-// })
-app.listen(2024, () => console.log("Servidor funcionando"))
+
+app.get("/peliculas/:id", (req, res) => {
+    console.log(req.params.id)
+    getPeliculaId(req.params.id)
+        .then( pelicula => res.send( crearPagina("detalle", crearDetallePelicula(pelicula)) ) )
+}) // localhost:2025/peliculas/1
+
+app.listen(2025, () => console.log("Servidor funcionando"))

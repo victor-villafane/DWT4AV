@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "titulo": "Inception",
+        "tematica": "Ciencia Ficci\u00f3n",
+        "fecha_estreno": "2010-07-16",
+        "puntuacion": 8.8,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "Un ladr\u00f3n especializado en extraer informaci\u00f3n de los sue\u00f1os de las personas es contratado para una tarea de inserci\u00f3n de ideas en la mente de un magnate."
+    },
+    {
+        "id": 2,
+        "titulo": "The Dark Knight",
+        "tematica": "Acci\u00f3n",
+        "fecha_estreno": "2008-07-18",
+        "puntuacion": 9.0,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "Batman se enfrenta a su mayor enemigo, el Joker, en una batalla por salvar a Gotham City del caos total.",
+        "portada": "https://www.imdb.com/title/tt0468569/mediaviewer/rm4264853760"
+    },
+    {
+        "id": 3,
+        "titulo": "Forrest Gump",
+        "tematica": "Drama",
+        "fecha_estreno": "1994-07-06",
+        "puntuacion": 8.8,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "La vida de un hombre simple pero extraordinario que se convierte en testigo de importantes momentos hist\u00f3ricos en Estados Unidos."
+    },
+    {
+        "id": 4,
+        "titulo": "Pulp Fiction",
+        "tematica": "Crimen",
+        "fecha_estreno": "1994-10-14",
+        "puntuacion": 8.9,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "Historias interconectadas de criminales en Los \u00c1ngeles que exploran la violencia, la redenci\u00f3n y la moralidad."
+    },
+    {
+        "id": 5,
+        "titulo": "The Shawshank Redemption",
+        "tematica": "Drama",
+        "fecha_estreno": "1994-09-23",
+        "puntuacion": 9.3,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "Un banquero condenado por el asesinato de su esposa encuentra consuelo y redenci\u00f3n a trav\u00e9s de la amistad y los actos de bondad en la prisi\u00f3n de Shawshank."
+    },
+    {
+        "id": 6,
+        "titulo": "The Matrix",
+        "tematica": "Ciencia Ficci\u00f3n",
+        "fecha_estreno": "1999-03-31",
+        "puntuacion": 8.7,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "Un hacker descubre que la realidad es una simulaci\u00f3n creada por m\u00e1quinas y se une a una rebeli\u00f3n para liberar a la humanidad."
+    },
+    {
+        "id": 7,
+        "titulo": "The Godfather",
+        "tematica": "Crimen",
+        "fecha_estreno": "1972-03-24",
+        "puntuacion": 9.2,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "La saga de la familia Corleone, una de las m\u00e1s poderosas familias de la mafia en Estados Unidos."
+    },
+    {
+        "id": 8,
+        "titulo": "Schindler's List",
+        "tematica": "Hist\u00f3rica",
+        "fecha_estreno": "1993-12-15",
+        "puntuacion": 9.0,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "La historia real de Oskar Schindler, quien salv\u00f3 a m\u00e1s de mil jud\u00edos durante el Holocausto."
+    },
+    {
+        "id": 9,
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "tematica": "Fantas\u00eda",
+        "fecha_estreno": "2001-12-19",
+        "puntuacion": 8.8,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "Un grupo de h\u00e9roes inicia una peligrosa misi\u00f3n para destruir un anillo m\u00e1gico y salvar la Tierra Media del Se\u00f1or Oscuro Sauron."
+    },
+    {
+        "id": 10,
+        "titulo": "Star Wars: Episode IV - A New Hope",
+        "tematica": "Ciencia Ficci\u00f3n",
+        "fecha_estreno": "1977-05-25",
+        "puntuacion": 8.6,
+        "categoria": "Pel\u00edcula",
+        "descripcion": "Un joven granjero se une a una lucha intergal\u00e1ctica contra un imperio opresivo liderado por Darth Vader."
+    }
+]
