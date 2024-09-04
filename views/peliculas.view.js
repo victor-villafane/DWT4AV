@@ -10,6 +10,7 @@ function crearListadoPeliculas(peliculas){
     html+="<th>puntuacion</th>"
     html+="<th>categoria</th>"
     html+="<th>descripcion</th>"
+    html+="<th>ver mas</th>"
     html+="</tr>"
     html+="<tr>"
     if( peliculas.length === 0 ){
@@ -24,6 +25,7 @@ function crearListadoPeliculas(peliculas){
             html+="<td>" + producto.puntuacion + "</td>"
             html+="<td>" + producto.categoria + "</td>"
             html+="<td>" + producto.descripcion + "</td>"
+            html+=`<td> <a href='/peliculas/${producto.id}' >ver</a> </td>`
             html+="</tr>"
         })
     }
@@ -73,13 +75,10 @@ function crearDetallePelicula(pelicula){
     html+= "<td>" + "<img src="+ pelicula.portada + ">" + "</td>"
     html+="</tr>"    
     html+="</tr>"
+    html+="<a href='/peliculas' >atras</a>"
     return html    
 }
 
-// module.exports = {
-//     crearPagina,
-//     crearListadoProductos
-// }
 export default {
     crearPagina,
     crearListadoPeliculas,
