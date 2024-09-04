@@ -12,8 +12,12 @@ const getPeliculaId = (req, res) => {
     peliculaService.getPeliculaId(req.params.id)
         .then( pelicula => res.send( peliculaView.crearPagina("detalle", peliculaView.crearDetallePelicula(pelicula)) ) )
 }
+const nuevaPelicula = (req, res) => {
+    res.send( peliculaView.crearPagina("Nueva pelicula", peliculaView.nuevaPelicula() ) )
+}
 
 export {
     getPeliculaId,
-    getPeliculas
+    getPeliculas,
+    nuevaPelicula
 }

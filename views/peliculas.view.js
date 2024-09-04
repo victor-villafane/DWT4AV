@@ -1,5 +1,6 @@
 function crearListadoPeliculas(peliculas){
     let html = ""
+    html += "<a href='/peliculas/nuevo' >Agregar pelicula</a>"
     html+="<h1>Peliculas</h1>"
     html+="<table>"
     html+="<tr>"
@@ -79,13 +80,21 @@ function crearDetallePelicula(pelicula){
     return html    
 }
 
+function nuevaPelicula(){
+    let html = ""
+    html += "<h1>FORMULARIO</h1>"
+    return html
+}
+
 export default {
     crearPagina,
     crearListadoPeliculas,
-    crearDetallePelicula
+    crearDetallePelicula,
+    nuevaPelicula
 }
 export {
     crearPagina,
     crearListadoPeliculas,
-    crearDetallePelicula
+    crearDetallePelicula,
+    nuevaPelicula
 }
