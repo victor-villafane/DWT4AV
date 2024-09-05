@@ -81,8 +81,28 @@ function crearDetallePelicula(pelicula){
 }
 
 function nuevaPelicula(){
-    let html = ""
-    html += "<h1>FORMULARIO</h1>"
+    let html = "<h1>Agregar Nueva Pelicula</h1>"
+    html += "<form action='/peliculas/nuevo' method='post'>"
+    html += "<label for='titulo'>Titulo</label>"
+    html += "<input type='text' name='titulo' required>"
+    html += "<br>"
+    html += "<label for='tematica'>Tematica</label>"
+    html += "<input type='text' name='tematica' required>"
+    html += "<br>"
+    html += "<label for='fecha_estreno'>Fecha de estreno</label>"
+    html += "<input type='date' name='fecha_estreno' required>"
+    html += "<br>"
+    html += "<label for='puntuacion'>Puntuacion</label>"
+    html += "<input type='number' name='puntuacion' required>"
+    html += "<br>"
+    html += "<label for='categoria'>Categoria</label>"
+    html += "<input type='text' name='categoria' required>"
+    html += "<br>"
+    html += "<label for='descripcion'>Descripcion</label>"
+    html += "<input type='text' name='descripcion' required>"
+    html += "<br>"
+    html += "<button type='submit' >Agregar</button>"
+    html += "</form>"
     return html
 }
 

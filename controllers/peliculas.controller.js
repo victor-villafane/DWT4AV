@@ -16,8 +16,16 @@ const nuevaPelicula = (req, res) => {
     res.send( peliculaView.crearPagina("Nueva pelicula", peliculaView.nuevaPelicula() ) )
 }
 
+const agregarPelicula = (req, res) => {
+    peliculaService.agregarPelicula(req.body)
+    .then( ( pelicula ) => res.send( peliculaView.crearPagina("Nueva pelicula", `<p>id: ${pelicula.id} <br> Titulo: ${pelicula.titulo}</p>`  ) ) )
+    .catch( (err) => res.send(peliculaView.crearPagina("Error Al agregar una pelicula", `<p>${err}</p>`)) )
+
+}
+
 export {
     getPeliculaId,
     getPeliculas,
-    nuevaPelicula
+    nuevaPelicula,
+    agregarPelicula
 }
