@@ -12,6 +12,8 @@ function crearListadoPeliculas(peliculas){
     html+="<th>categoria</th>"
     html+="<th>descripcion</th>"
     html+="<th>ver mas</th>"
+    html+="<th>Eliminar</th>"
+
     html+="</tr>"
     html+="<tr>"
     if( peliculas.length === 0 ){
@@ -27,6 +29,7 @@ function crearListadoPeliculas(peliculas){
             html+="<td>" + producto.categoria + "</td>"
             html+="<td>" + producto.descripcion + "</td>"
             html+=`<td> <a href='/peliculas/${producto.id}' >ver</a> </td>`
+            html+=`<td> <a href='/peliculas/eliminar/${producto.id}' >Eliminar</a> </td>`
             html+="</tr>"
         })
     }

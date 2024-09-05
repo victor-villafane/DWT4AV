@@ -1,8 +1,8 @@
 import { readFile,writeFile } from "fs/promises"
 import path from "path"
-function getPeliculas(){
+function getPeliculas(eliminardos = false){
     return readFile(path.resolve("data/productos.json"), { encoding: 'utf8' })
-        .then( (peliculas) => JSON.parse(peliculas) )
+        .then( (peliculas) => eliminardos ? JSON.parse(peliculas) : JSON.parse(peliculas).filter( pelicula => !pelicula.eliminado ) )
         .catch( () => [] )
 }
 
@@ -23,8 +23,30 @@ function agregarPelicula(pelicula){
         return nuevaPelicula
     })
 }
+
+function eliminarPelicula(id){
+    return getPeliculas(true)
+        .then( async peliculas => {
+
+            const peliculasActualizadas = peliculas.map( pelicula =>  {
+                if( pelicula.id == id ) {
+                    return {
+                        ...pelicula,
+                        eliminado: true
+                    }
+                }else{
+                    return pelicula
+                } 
+            } )  
+
+            await writeFile("./data/productos.json", JSON.stringify(peliculasActualizadas))
+            return id
+        } )
+}
+
 export {
     getPeliculaId,
     getPeliculas,
-    agregarPelicula
+    agregarPelicula,
+    eliminarPelicula
 }
