@@ -1,4 +1,4 @@
-function crearListadoPeliculas(peliculas){
+export function crearListadoPeliculas(peliculas){
     let html = ""
     html += "<a href='/peliculas/nuevo' >Agregar pelicula</a>"
     html+="<h1>Peliculas</h1>"
@@ -29,6 +29,7 @@ function crearListadoPeliculas(peliculas){
             html+="<td>" + producto.categoria + "</td>"
             html+="<td>" + producto.descripcion + "</td>"
             html+=`<td> <a href='/peliculas/${producto.id}' >ver</a> </td>`
+            html+=`<td> <a href='/peliculas/modificar/${producto.id}' >Modificar</a> </td>`
             html+=`<td> <a href='/peliculas/eliminar/${producto.id}' >Eliminar</a> </td>`
             html+="</tr>"
         })
@@ -37,7 +38,7 @@ function crearListadoPeliculas(peliculas){
     html+="</tr>"
     return html
 }
-function crearPagina(titulo, contenido){
+export function crearPagina(titulo, contenido){
     let html = `
     <!DOCTYPE html>
     <html lang="es">
@@ -54,7 +55,7 @@ function crearPagina(titulo, contenido){
     return html
 }
 
-function crearDetallePelicula(pelicula){
+export function crearDetallePelicula(pelicula){
     let html = ""
     html+="<h1>Pelicula</h1>"
     html+="<table>"
@@ -83,7 +84,7 @@ function crearDetallePelicula(pelicula){
     return html    
 }
 
-function nuevaPelicula(){
+export function nuevaPelicula(){
     let html = "<h1>Agregar Nueva Pelicula</h1>"
     html += "<form action='/peliculas/nuevo' method='post'>"
     html += "<label for='titulo'>Titulo</label>"
@@ -109,15 +110,28 @@ function nuevaPelicula(){
     return html
 }
 
-export default {
-    crearPagina,
-    crearListadoPeliculas,
-    crearDetallePelicula,
-    nuevaPelicula
-}
-export {
-    crearPagina,
-    crearListadoPeliculas,
-    crearDetallePelicula,
-    nuevaPelicula
+export function modificarForm(pelicula){
+    let html = "<h1>Agregar Nueva Pelicula</h1>"
+    html += `<form action='/peliculas/modificar/${pelicula.id}' method='post'>`
+    html += "<label for='titulo'>Titulo</label>"
+    html += `<input type='text' name='titulo' value="${pelicula.titulo}" required>`
+    html += "<br>"
+    html += "<label for='tematica'>Tematica</label>"
+    html += `<input type='text' name='tematica' value="${pelicula.tematica}" required>`
+    html += "<br>"
+    html += "<label for='fecha_estreno'>Fecha de estreno</label>"
+    html += `<input type='date' name='fecha_estreno' value="${pelicula.fecha_estreno}" required>`
+    html += "<br>"
+    html += "<label for='puntuacion'>Puntuacion</label>"
+    html += `<input type='number' name='puntuacion' value="${pelicula.puntuacion}" required> `
+    html += "<br>"
+    html += "<label for='categoria'>Categoria</label>"
+    html += `<input type='text' name='categoria' value="${pelicula.categoria}" required>`
+    html += "<br>"
+    html += "<label for='descripcion'>Descripcion</label>"
+    html += `<input type='text' name='descripcion' value="${pelicula.descripcion}" required>`
+    html += "<br>"
+    html += "<button type='submit' >Agregar</button>"
+    html += "</form>"
+    return html    
 }

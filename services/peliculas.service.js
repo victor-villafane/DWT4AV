@@ -1,7 +1,7 @@
 import { readFile,writeFile } from "fs/promises"
-import path from "path"
+import { resolve } from "path"
 function getPeliculas(eliminardos = false){
-    return readFile(path.resolve("data/productos.json"), { encoding: 'utf8' })
+    return readFile(resolve("data/productos.json"), { encoding: 'utf8' })
         .then( (peliculas) => eliminardos ? JSON.parse(peliculas) : JSON.parse(peliculas).filter( pelicula => !pelicula.eliminado ) )
         .catch( () => [] )
 }
@@ -43,10 +43,26 @@ function eliminarPelicula(id){
             return id
         } )
 }
-
+const modificarPelicula = (id, peliculaActualizada) => {
+    return getPeliculas(true)
+        .then( async peliculas => {
+            const peliculasActualizadas = peliculas.map( pelicula => {
+                if( pelicula.id == id ){
+                    return {
+                        id: id,
+                        ...peliculaActualizada
+                    }
+                }else{
+                    return pelicula
+                }
+            } )
+            await writeFile("./data/productos.json", JSON.stringify(peliculasActualizadas))
+        } )
+}
 export {
     getPeliculaId,
     getPeliculas,
     agregarPelicula,
-    eliminarPelicula
+    eliminarPelicula,
+    modificarPelicula
 }
