@@ -46,23 +46,53 @@ function eliminarPelicula(id){
 const modificarPelicula = (id, peliculaActualizada) => {
     return getPeliculas(true)
         .then( async peliculas => {
+            let peliculaActualiza = null
             const peliculasActualizadas = peliculas.map( pelicula => {
                 if( pelicula.id == id ){
-                    return {
+                    peliculaActualiza = {
                         id: id,
                         ...peliculaActualizada
                     }
+                    return peliculaActualiza
                 }else{
                     return pelicula
                 }
             } )
             await writeFile("./data/productos.json", JSON.stringify(peliculasActualizadas))
+            return peliculaActualiza
         } )
 }
+
+const actualizarPelicula = (id, peliculaActualizada) => {
+    return getPeliculas(true)
+        .then( async peliculas => {
+            let peliculaActualiza = null
+            const peliculasActualizadas = peliculas.map( pelicula => {
+                if( pelicula.id == id ){
+                    peliculaActualiza = {
+                        id: id,
+                        titulo: peliculaActualizada.titulo ? peliculaActualizada.titulo : pelicula.titulo,
+                        tematica: peliculaActualizada.tematica ? peliculaActualizada.tematica : pelicula.tematica, 
+                        fecha_estreno: peliculaActualizada.fecha_estreno ? peliculaActualizada.fecha_estreno : pelicula.fecha_estreno, 
+                        puntuacion: peliculaActualizada.puntuacion ? peliculaActualizada.puntuacion : pelicula.puntuacion, 
+                        categoria: peliculaActualizada.categoria ? peliculaActualizada.categoria : pelicula.categoria, 
+                        descripcion: peliculaActualizada.descripcion ? peliculaActualizada.descripcion : pelicula.descripcion, 
+                    }
+                    return peliculaActualiza
+                }else{
+                    return pelicula
+                }
+            } )
+            await writeFile("./data/productos.json", JSON.stringify(peliculasActualizadas))
+            return peliculaActualiza
+        } )
+}
+
 export {
     getPeliculaId,
     getPeliculas,
     agregarPelicula,
     eliminarPelicula,
-    modificarPelicula
+    modificarPelicula,
+    actualizarPelicula
 }
