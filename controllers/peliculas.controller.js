@@ -9,9 +9,11 @@ const getPeliculas = (req, res)=>{
 }
 
 const getPeliculaId = (req, res) => {
-    console.log(req.params.id)
-    peliculaService.getPeliculaId(req.params.id)
-        .then( pelicula => res.send( peliculaView.crearPagina("detalle", peliculaView.crearDetallePelicula(pelicula)) ) )
+    console.log("Params id",req.params.id)
+    if( req.params.id ){
+        peliculaService.getPeliculaId(req.params.id)
+            .then( pelicula => res.send( peliculaView.crearPagina("detalle", peliculaView.crearDetallePelicula(pelicula)) ) )
+    }
 }
 const nuevaPelicula = (req, res) => {
     res.send( peliculaView.crearPagina("Nueva pelicula", peliculaView.nuevaPelicula() ) )
