@@ -10,9 +10,11 @@ const getPeliculas = (req, res)=>{
 
 const getPeliculaId = (req, res) => {
     console.log("Params id",req.params.id)
-    if( req.params.id ){
+    if( req.params.id !== undefined ){
         peliculaService.getPeliculaId(req.params.id)
             .then( pelicula => res.send( peliculaView.crearPagina("detalle", peliculaView.crearDetallePelicula(pelicula)) ) )
+    }else{
+        res.send("No se encontro la pelicula")
     }
 }
 const nuevaPelicula = (req, res) => {

@@ -1,5 +1,5 @@
 export function crearListadoPeliculas(peliculas) {
-  console.log("peliculas", peliculas);
+  // console.log("peliculas", peliculas);
   let html = "";
   html += "<a href='/peliculas/nuevo' >Agregar pelicula</a>";
   html += "<h1>Peliculas</h1>";
@@ -29,13 +29,12 @@ export function crearListadoPeliculas(peliculas) {
       html += "<td>" + producto.puntuacion + "</td>";
       html += "<td>" + producto.categoria + "</td>";
       html += "<td>" + producto.descripcion + "</td>";
-      html += `<td> <a href='/peliculas/${producto._id}' >ver</a> </td>`;
+      html += `<td> <a href='/peliculas/${producto._id}' >ver /peliculas/${producto._id}</a> </td>`;
       html += `<td> <a href='/peliculas/modificar/${producto._id}' >Modificar</a> </td>`;
       html += `<td> <a href='/peliculas/eliminar/${producto._id}' >Eliminar</a> </td>`;
       html += "</tr>";
     });
   }
-
   html += "</tr>";
   return html;
 }
@@ -57,33 +56,32 @@ export function crearPagina(titulo, contenido) {
 }
 
 export function crearDetallePelicula(pelicula) {
-    console.log(pelicula)
-
-    let html = "";
-    html += "<h1>Pelicula</h1>";
-    html += "<table>";
-    html += "<tr>";
-    html += "<th>ID</th>";
-    html += "<th>titulo</th>";
-    html += "<th>tematica</th>";
-    html += "<th>fecha_estreno</th>";
-    html += "<th>puntuacion</th>";
-    html += "<th>categoria</th>";
-    html += "<th>descripcion</th>";
-    html += "</tr>";
-    html += "<tr>";
-    html += "<tr>";
-    html += "<td>" + pelicula._id + "</td>";
-    html += "<td>" + pelicula.titulo + "</td>";
-    html += "<td>" + pelicula.tematica + "</td>";
-    html += "<td>" + pelicula.fecha_estreno + "</td>";
-    html += "<td>" + pelicula.puntuacion + "</td>";
-    html += "<td>" + pelicula.categoria + "</td>";
-    html += "<td>" + pelicula.descripcion + "</td>";
-    html += "<td>" + "<img src=" + pelicula.portada + ">" + "</td>";
-    html += "</tr>";
-    html += "</tr>";
-    html += "<a href='/peliculas' >atras</a>";
+  console.log("pelicula en detalle", pelicula);
+  let html = "";
+  html += "<h1>Pelicula</h1>";
+  html += "<table>";
+  html += "<tr>";
+  html += "<th>ID</th>";
+  html += "<th>titulo</th>";
+  html += "<th>tematica</th>";
+  html += "<th>fecha_estreno</th>";
+  html += "<th>puntuacion</th>";
+  html += "<th>categoria</th>";
+  html += "<th>descripcion</th>";
+  html += "</tr>";
+  html += "<tr>";
+  html += "<tr>";
+  html += "<td>" + pelicula._id + "</td>";
+  html += "<td>" + pelicula.titulo + "</td>";
+  html += "<td>" + pelicula.tematica + "</td>";
+  html += "<td>" + pelicula.fecha_estreno + "</td>";
+  html += "<td>" + pelicula.puntuacion + "</td>";
+  html += "<td>" + pelicula.categoria + "</td>";
+  html += "<td>" + pelicula.descripcion + "</td>";
+  html += "<td>" + "<img src=" + pelicula.portada + ">" + "</td>";
+  html += "</tr>";
+  html += "</tr>";
+  html += "<a href='/peliculas' >atras</a>";
   return html;
 }
 
