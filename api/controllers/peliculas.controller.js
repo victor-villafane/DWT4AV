@@ -1,7 +1,9 @@
 import * as service from "../../services/peliculas.service.js"
 
 function getPeliculas(req, res){
-    service.getPeliculas()
+    console.log("Filtros", req.query)
+    const filtros = req.query
+    service.getPeliculas(filtros)
         .then( (peliculas) => res.status(200).json(peliculas) )
 }
 

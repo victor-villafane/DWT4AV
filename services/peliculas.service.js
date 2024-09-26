@@ -3,9 +3,19 @@ import { MongoClient, ObjectId } from "mongodb"
 const client = new MongoClient("mongodb://localhost:27017")
 const db = client.db("PeliculasDB")
 
-async function getPeliculas(eliminardos = false){
+async function getPeliculas(filtros = {}){
+    const filterMongo = { eliminado: { $ne: true } }
+    if(filtros.tematica !== undefined){
+        filterMongo.tematica = {$eq : filtros.tematica}
+    }
+    if( filtros.puntuacionMayorQue !== undefined || filtros.puntuacionMenorQue !== undefined ){
+        filterMongo.$and = [ {puntuacion: { $gt: parseInt(filtros.puntuacionMayorQue) }}, { puntuacion: { $lt: parseInt(filtros.puntuacionMenorQue) } } ]
+    }
+    if( filtros.descripcion !== undefined ){
+        filterMongo.$text = { $search: filtros.descripcion }
+    }
     await client.connect()
-    return db.collection("peliculas").find( { "eliminado": { "$ne": !eliminardos } } ).toArray()
+    return db.collection("peliculas").find( filterMongo ).toArray()
 }
 
 async function getPeliculaId(id_ingresado){
