@@ -1,1 +1,143 @@
-[{"id":1,"titulo":"Inception","tematica":"Ciencia Ficción","fecha_estreno":"2010-07-16","puntuacion":8.8,"categoria":"Película","descripcion":"Un ladrón especializado en extraer información de los sueños de las personas es contratado para una tarea de inserción de ideas en la mente de un magnate."},{"id":2,"titulo":"The Dark Knight","tematica":"Acción","fecha_estreno":"2008-07-18","puntuacion":9,"categoria":"Película","descripcion":"Batman se enfrenta a su mayor enemigo, el Joker, en una batalla por salvar a Gotham City del caos total.","portada":"https://www.imdb.com/title/tt0468569/mediaviewer/rm4264853760"},{"id":3,"titulo":"Forrest Gump","tematica":"Drama","fecha_estreno":"1994-07-06","puntuacion":8.8,"categoria":"Película","descripcion":"La vida de un hombre simple pero extraordinario que se convierte en testigo de importantes momentos históricos en Estados Unidos."},{"id":4,"titulo":"Pulp Fiction","tematica":"Crimen","fecha_estreno":"1994-10-14","puntuacion":8.9,"categoria":"Película","descripcion":"Historias interconectadas de criminales en Los Ángeles que exploran la violencia, la redención y la moralidad."},{"id":5,"titulo":"The Shawshank Redemption","tematica":"Drama","fecha_estreno":"1994-09-23","puntuacion":9.3,"categoria":"Película","descripcion":"Un banquero condenado por el asesinato de su esposa encuentra consuelo y redención a través de la amistad y los actos de bondad en la prisión de Shawshank."},{"id":6,"titulo":"The Matrix","tematica":"Ciencia Ficción","fecha_estreno":"1999-03-31","puntuacion":8.7,"categoria":"Película","descripcion":"Un hacker descubre que la realidad es una simulación creada por máquinas y se une a una rebelión para liberar a la humanidad."},{"id":7,"titulo":"The Godfather","tematica":"Crimen","fecha_estreno":"1972-03-24","puntuacion":9.2,"categoria":"Película","descripcion":"La saga de la familia Corleone, una de las más poderosas familias de la mafia en Estados Unidos."},{"id":8,"titulo":"Schindler's List","tematica":"Histórica","fecha_estreno":"1993-12-15","puntuacion":9,"categoria":"Película","descripcion":"La historia real de Oskar Schindler, quien salvó a más de mil judíos durante el Holocausto."},{"id":9,"titulo":"The Lord of the Rings: The Fellowship of the Ring","tematica":"Fantasía","fecha_estreno":"2001-12-19","puntuacion":8.8,"categoria":"Película","descripcion":"Un grupo de héroes inicia una peligrosa misión para destruir un anillo mágico y salvar la Tierra Media del Señor Oscuro Sauron."},{"id":10,"titulo":"Star Wars: Episode IV - A New Hope","tematica":"Ciencia Ficción","fecha_estreno":"1977-05-25","puntuacion":8.6,"categoria":"Película","descripcion":"Un joven granjero se une a una lucha intergaláctica contra un imperio opresivo liderado por Darth Vader."},{"id":11,"titulo":"asd","tematica":"asd","fecha_estreno":"2024-12-12","puntuacion":"12","categoria":"12","descripcion":"12"},{"titulo":"asd","tematica":"asd","fecha_estreno":"2024-12-12","puntuacion":"12","categoria":"12","descripcion":"12","id":12},{"id":13,"titulo":"asd","tematica":"asd","fecha_estreno":"2024-12-12","puntuacion":"12","categoria":"12","descripcion":"12"},{"id":14,"titulo":"asd","tematica":"adasd","fecha_estreno":"2024-09-18","puntuacion":"12","categoria":"asd","descripcion":"asd"},{"id":"15","titulo":"Actualizado!","tematica":"SOLICITUD","fecha_estreno":"2024-09-18","puntuacion":100,"categoria":"asd","descripcion":"asd","eliminado":true},{"id":"16","titulo":"Pizado"}]
+[
+    {
+        "id": 1,
+        "titulo": "Inception",
+        "tematica": "Ciencia Ficción",
+        "fecha_estreno": "2010-07-16",
+        "puntuacion": 8.8,
+        "categoria": "Película",
+        "descripcion": "Un ladrón especializado en extraer información de los sueños de las personas es contratado para una tarea de inserción de ideas en la mente de un magnate."
+    },
+    {
+        "id": 2,
+        "titulo": "The Dark Knight",
+        "tematica": "Acción",
+        "fecha_estreno": "2008-07-18",
+        "puntuacion": 9,
+        "categoria": "Película",
+        "descripcion": "Batman se enfrenta a su mayor enemigo, el Joker, en una batalla por salvar a Gotham City del caos total.",
+        "portada": "https://www.imdb.com/title/tt0468569/mediaviewer/rm4264853760"
+    },
+    {
+        "id": 3,
+        "titulo": "Forrest Gump",
+        "tematica": "Drama",
+        "fecha_estreno": "1994-07-06",
+        "puntuacion": 8.8,
+        "categoria": "Película",
+        "descripcion": "La vida de un hombre simple pero extraordinario que se convierte en testigo de importantes momentos históricos en Estados Unidos."
+    },
+    {
+        "id": 4,
+        "titulo": "Pulp Fiction",
+        "tematica": "Crimen",
+        "fecha_estreno": "1994-10-14",
+        "puntuacion": 8.9,
+        "categoria": "Película",
+        "descripcion": "Historias interconectadas de criminales en Los Ángeles que exploran la violencia, la redención y la moralidad."
+    },
+    {
+        "id": 5,
+        "titulo": "The Shawshank Redemption",
+        "tematica": "Drama",
+        "fecha_estreno": "1994-09-23",
+        "puntuacion": 9.3,
+        "categoria": "Película",
+        "descripcion": "Un banquero condenado por el asesinato de su esposa encuentra consuelo y redención a través de la amistad y los actos de bondad en la prisión de Shawshank."
+    },
+    {
+        "id": 6,
+        "titulo": "The Matrix",
+        "tematica": "Ciencia Ficción",
+        "fecha_estreno": "1999-03-31",
+        "puntuacion": 8.7,
+        "categoria": "Película",
+        "descripcion": "Un hacker descubre que la realidad es una simulación creada por máquinas y se une a una rebelión para liberar a la humanidad."
+    },
+    {
+        "id": 7,
+        "titulo": "The Godfather",
+        "tematica": "Crimen",
+        "fecha_estreno": "1972-03-24",
+        "puntuacion": 9.2,
+        "categoria": "Película",
+        "descripcion": "La saga de la familia Corleone, una de las más poderosas familias de la mafia en Estados Unidos."
+    },
+    {
+        "id": 8,
+        "titulo": "Schindler's List",
+        "tematica": "Histórica",
+        "fecha_estreno": "1993-12-15",
+        "puntuacion": 9,
+        "categoria": "Película",
+        "descripcion": "La historia real de Oskar Schindler, quien salvó a más de mil judíos durante el Holocausto."
+    },
+    {
+        "id": 9,
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring",
+        "tematica": "Fantasía",
+        "fecha_estreno": "2001-12-19",
+        "puntuacion": 8.8,
+        "categoria": "Película",
+        "descripcion": "Un grupo de héroes inicia una peligrosa misión para destruir un anillo mágico y salvar la Tierra Media del Señor Oscuro Sauron."
+    },
+    {
+        "id": 10,
+        "titulo": "Star Wars: Episode IV - A New Hope",
+        "tematica": "Ciencia Ficción",
+        "fecha_estreno": "1977-05-25",
+        "puntuacion": 8.6,
+        "categoria": "Película",
+        "descripcion": "Un joven granjero se une a una lucha intergaláctica contra un imperio opresivo liderado por Darth Vader."
+    },
+    {
+        "id": 11,
+        "titulo": "asd",
+        "tematica": "asd",
+        "fecha_estreno": "2024-12-12",
+        "puntuacion": "12",
+        "categoria": "12",
+        "descripcion": "12"
+    },
+    {
+        "titulo": "asd",
+        "tematica": "asd",
+        "fecha_estreno": "2024-12-12",
+        "puntuacion": "12",
+        "categoria": "12",
+        "descripcion": "12",
+        "id": 12
+    },
+    {
+        "id": 13,
+        "titulo": "asd",
+        "tematica": "asd",
+        "fecha_estreno": "2024-12-12",
+        "puntuacion": "12",
+        "categoria": "12",
+        "descripcion": "12"
+    },
+    {
+        "id": 14,
+        "titulo": "asd",
+        "tematica": "adasd",
+        "fecha_estreno": "2024-09-18",
+        "puntuacion": "12",
+        "categoria": "asd",
+        "descripcion": "asd"
+    },
+    {
+        "id": "15",
+        "titulo": "Actualizado!",
+        "tematica": "SOLICITUD",
+        "fecha_estreno": "2024-09-18",
+        "puntuacion": 100,
+        "categoria": "asd",
+        "descripcion": "asd",
+        "eliminado": true
+    },
+    {
+        "id": "16",
+        "titulo": "Pizado"
+    }
+]
