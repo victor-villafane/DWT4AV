@@ -1,6 +1,7 @@
 import express from "express"
 import peliculasRoute from "./routes/peliculas.routes.js"
-import apiRoute from "./api/routes/peliculas.routes.js"
+import apiPeliculas from "./api/routes/peliculas.routes.js"
+import apiActores from "./api/routes/actores.routes.js"
 const app = express()
 // let contador = 0
 
@@ -8,7 +9,8 @@ const app = express()
 app.use( express.urlencoded({ extended: true }) )
 app.use( express.json() )
 
-app.use("/api",apiRoute)
+app.use("/api",apiPeliculas)
+app.use("/api", apiActores)
 app.use(peliculasRoute)
 
 app.listen(2025, () => console.log("Servidor funcionando"))
