@@ -1,0 +1,32 @@
+[
+    {
+      "nombre": "Cinepolis Palermo",
+      "ubicacion": {
+        "direccion": "Av. Santa Fe 1234",
+        "ciudad": "Buenos Aires",
+        "provincia": "Buenos Aires",
+        "pais": "Argentina"
+      },
+      "salas": 8
+    },
+    {
+      "nombre": "Cinemark Caballito",
+      "ubicacion": {
+        "direccion": "Av. Rivadavia 5100",
+        "ciudad": "Buenos Aires",
+        "provincia": "Buenos Aires",
+        "pais": "Argentina"
+      },
+      "salas": 10
+    },
+    {
+      "nombre": "Hoyts Abasto",
+      "ubicacion": {
+        "direccion": "Av. Corrientes 3247",
+        "ciudad": "Buenos Aires",
+        "provincia": "Buenos Aires",
+        "pais": "Argentina"
+      },
+      "salas": 12
+    }
+  ]
