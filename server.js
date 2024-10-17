@@ -3,6 +3,9 @@ import peliculasRoute from "./routes/peliculas.routes.js"
 import apiPeliculas from "./api/routes/peliculas.routes.js"
 import apiActores from "./api/routes/actores.routes.js"
 import apiCines from "./api/routes/cines.routes.js"
+import cors from "cors"
+
+
 const app = express()
 // let contador = 0
 
@@ -10,10 +13,16 @@ const app = express()
 app.use( express.urlencoded({ extended: true }) )
 app.use( express.json() )
 
+const corsOptions = {
+    origin: "http://localhost:5173",    // Permite solicites solo desde esta URL
+    methods: "GET,POST,PUT,DELETE",      // Metodos permitidos
+}
+
+app.use( cors(corsOptions) )
+
 app.use("/api",apiPeliculas)
 app.use("/api", apiActores)
 app.use("/api", apiCines)
-
 app.use(peliculasRoute)
 
 app.listen(2025, () => console.log("Servidor funcionando"))
