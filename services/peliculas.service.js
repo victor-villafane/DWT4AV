@@ -26,7 +26,26 @@ async function getPeliculaId(id_ingresado){
 }
 
 async function agregarPelicula(pelicula){
-    console.log(pelicula)
+
+    // const nuevaPelicula = {
+    //     rank: pelicula.rank,
+    //     id: pelicula.id,
+    //     name: pelicula.name,
+    //     year: pelicula.year,
+    //     imbd_votes: pelicula.imbd_votes,
+    //     imdb_rating: pelicula.imdb_rating,
+    //     certificate: pelicula.certificate, 
+    //     duration: pelicula.duration,
+    //     genre: pelicula.genre,
+    //     cast_id: pelicula.cast_id,
+    //     cast_name: pelicula.cast_name,
+    //     director_id: pelicula.director_id,
+    //     director_name: pelicula.director_name,
+    //     writter_name: pelicula.writter_name,
+    //     writter_id: pelicula.writter_id, 
+    //     img_link: pelicula.img_link
+    // }
+
     await client.connect()
     await db.collection("Movies").insertOne(pelicula)
     return pelicula

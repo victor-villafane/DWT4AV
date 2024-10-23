@@ -1,9 +1,9 @@
 import yup from 'yup'
 
 export const movieSchema = yup.object({
-    rank: yup.number().required(),
-    id: yup.string().required(),
-    name: yup.string().required(),
+    rank: yup.number().required().positive().integer(),
+    id: yup.string(),
+    name: yup.string().required().min(8, "Como minimo el nombre debe tener 8 caracteres"),
     year: yup.number().required().min(1800, "El año como minimo debe ser 1800").max(2030, "El año como maximo puede ser 2030"),
     imbd_votes: yup.number(),
     imdb_rating: yup.number(),

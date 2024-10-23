@@ -3,6 +3,7 @@ import peliculasRoute from "./routes/peliculas.routes.js"
 import apiPeliculas from "./api/routes/peliculas.routes.js"
 import apiActores from "./api/routes/actores.routes.js"
 import apiCines from "./api/routes/cines.routes.js"
+import apiUsuario from "./api/routes/usuarios.routes.js"
 import cors from "cors"
 
 
@@ -23,6 +24,7 @@ app.use( cors(corsOptions) )
 app.use("/api",apiPeliculas)
 app.use("/api", apiActores)
 app.use("/api", apiCines)
+app.use("/api", apiUsuario)
 app.use(peliculasRoute)
 
 app.listen(2025, () => console.log("Servidor funcionando"))
