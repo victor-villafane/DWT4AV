@@ -1,5 +1,9 @@
 import * as service from "../../services/peliculas.service.js"
 
+function getHealth(req, res){
+    res.status(200).json({status: "ok"})
+}
+
 function getPeliculas(req, res){
     console.log("Filtros", req.query)
     const filtros = req.query
@@ -48,5 +52,6 @@ export {
     agregarPelicula,
     reemplazarPelicula,
     actualizarPelicula,
-    borrarPelicula
+    borrarPelicula,
+    getHealth
 }

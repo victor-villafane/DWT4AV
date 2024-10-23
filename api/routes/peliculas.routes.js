@@ -3,6 +3,7 @@ import * as controller from "../controllers/peliculas.controller.js"
 import { validateMovie } from "../../middleware/movie.validate.middleware.js"
 const route = Router()
 
+route.get("/", controller.getHealth)
 route.get( "/peliculas", controller.getPeliculas )
 route.get( "/peliculas/:id", controller.getPeliculaId )
 route.post( "/peliculas", controller.agregarPelicula )
