@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      { "source": "/api/peliculas", "destination": "/api/routes/peliculas.routes.js" },
+      { "source": "/api/cines", "destination": "/api/routes/cines.routes.js" },
+      { "source": "/api/actores", "destination": "/api/routes/actores.routes.js" }
+    ]
+  }
+  

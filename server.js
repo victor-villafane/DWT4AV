@@ -25,7 +25,9 @@ app.use("/api", apiActores)
 app.use("/api", apiCines)
 app.use(peliculasRoute)
 
-app.listen(2025, () => console.log("Servidor funcionando"))
+// app.listen(2025, () => console.log("Servidor funcionando"))
+export default app;
+
 
 /**
  * 1. URL -> URI
