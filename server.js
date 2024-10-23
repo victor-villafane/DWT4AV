@@ -20,13 +20,13 @@ const corsOptions = {
 
 app.use( cors() )
 
-app.use("/api",apiPeliculas)
+app.use("/api/peliculas",apiPeliculas)
 app.use("/api", apiActores)
 app.use("/api", apiCines)
 app.use(peliculasRoute)
 
-// app.listen(2025, () => console.log("Servidor funcionando"))
-export default app;
+app.listen(2025, () => console.log("Servidor funcionando"))
+// export default app;
 
 
 /**
