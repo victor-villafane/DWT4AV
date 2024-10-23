@@ -18,7 +18,7 @@ const corsOptions = {
     methods: "GET,POST,PUT,DELETE",      // Metodos permitidos
 }
 
-app.use( cors(corsOptions) )
+app.use( cors() )
 
 app.use("/api",apiPeliculas)
 app.use("/api", apiActores)
