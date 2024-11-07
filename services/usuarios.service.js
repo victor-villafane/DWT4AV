@@ -39,3 +39,13 @@ export async function login(usuario){
     return { ...existe, token: token, password: undefined, passwordConfirm: undefined }
 }
 
+export async function getUser(id){
+    await client.connect()
+
+    const existe = await usuarios.findOne({ _id: new ObjectId(id) })
+
+    if( !existe ) throw new Error( "No se pudo obtener el usuario" )
+
+    return { ...existe, password: undefined }
+}
+
