@@ -5,9 +5,33 @@ import apiActores from "./api/routes/actores.routes.js"
 import apiCines from "./api/routes/cines.routes.js"
 import apiUsuario from "./api/routes/usuarios.routes.js"
 import cors from "cors"
-
+import { Server as SocketIO } from "socket.io"
+import http from "http"
 
 const app = express()
+const server = http.createServer(app)
+const io = new SocketIO(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET","POST"]
+    }
+})
+
+io.on("connection", (socket) => {
+    console.log("Cliente conectado")
+    io.emit("respuesta", "Conectado al servidor")
+
+    socket.on("disconnect", () => {
+        console.log("Cliente desconectado")
+    })
+
+    socket.on("chat mensaje", (mensaje) => {
+        console.log(mensaje)
+        io.emit("chat mensaje", "ECHO: " + mensaje)
+    })
+    
+})
+
 // let contador = 0
 
 // app.use( express.static("public") )
@@ -27,7 +51,8 @@ app.use("/api", apiCines)
 app.use("/api", apiUsuario)
 app.use(peliculasRoute)
 
-app.listen(2025, () => console.log("Servidor funcionando"))
+// app.listen(2025, () => console.log("Servidor funcionando"))
+server.listen(2025, () => console.log("Servidor funcionando"))
 
 /**
  * 1. URL -> URI
