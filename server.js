@@ -18,8 +18,9 @@ const io = new SocketIO(server, {
         methods: ["GET","POST"]
     }
 })
-
+const users = {}
 io.on("connection", (socket) => {
+    /**------------------ */
     console.log("Cliente conectado")
     io.emit("respuesta", "Conectado al servidor")
 
@@ -31,7 +32,22 @@ io.on("connection", (socket) => {
         console.log(mensaje)
         io.emit("chat mensaje", "ECHO: " + mensaje)
     })
-    
+    /**------------------ */
+    socket.on("nuevo usuario", (username) => {
+        users[username] = socket.id;
+        socket.broadcast.emit('user connected', username);
+        socket.username = username; // Guardamos el nombre de usuario en el socket para uso posterior
+        console.log(`${username} se ha conectado.`);
+    })
+
+    socket.on('chat message', ({ message, to }) => {
+        if (users[to]) {
+            socket.to(users[to]).emit('chat message', { message, from: socket.username });
+        } else {
+            // Si quieres, puedes emitir un mensaje al mismo usuario indicando que el destinatario no está disponible
+            socket.emit('chat message', { message: 'Usuario no disponible', from: 'Servidor' });
+        }
+    });
 })
 
 // let contador = 0
