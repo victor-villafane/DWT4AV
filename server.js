@@ -7,6 +7,8 @@ import apiUsuario from "./api/routes/usuarios.routes.js"
 import cors from "cors"
 import { Server as SocketIO } from "socket.io"
 import http from "http"
+import multer from "multer"
+import sharp from "sharp"
 
 const app = express()
 const server = http.createServer(app)
@@ -50,6 +52,48 @@ app.use("/api", apiActores)
 app.use("/api", apiCines)
 app.use("/api", apiUsuario)
 app.use(peliculasRoute)
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb( null, "./uploads" )
+    },
+    filename: function(req, file, cb){
+        cb( null, file.originalname.trim().replace(/\s/g, "_") )
+    }
+})
+
+const fileFilter = (req, file, cb) => {
+    if( file.mimetype === "application/x-zip-compressed" ){
+        cb(null, true)
+    }else{
+        cb( new Error("Solo se permiten archivos zip", false) )
+    }
+}
+
+async function resizeImage(req, res, next){
+    return sharp(req.file.path)
+        .resize(1500)
+        .webp()
+        .rotate(90)
+        .greyscale()
+        .toFile( "uploads/" + ( new Date().getTime() ) + ".webp" )
+        .then( () => {
+            console.log("Imagen redimencionada")
+            next()
+        } )
+        .catch( err => res.status(500).json({ "error": err }) )
+    }
+
+const upload = multer(
+    { 
+        "storage": storage, 
+        // "fileFilter": fileFilter 
+    })
+
+app.post( "/upload",[upload.single("file"), resizeImage], (req, res) => {
+    console.log(req.file)
+    res.status(200).json( {} )
+} )
 
 // app.listen(2025, () => console.log("Servidor funcionando"))
 server.listen(2025, () => console.log("Servidor funcionando"))
